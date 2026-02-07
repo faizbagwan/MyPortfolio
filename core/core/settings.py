@@ -123,3 +123,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+# settings.py
+
+# Optional: define extra locations for static files globally
+STATICFILES_DIRS = [
+    BASE_DIR / "static_project_files",
+]

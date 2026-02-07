@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Project</title>
+    <style>
+        div {
+           display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            
+            
+        }
+       th,td {
+            border: 1px solid #000000;
+            padding: 8px;
+            text align: center;
+        
+        }
+        tr {
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+  
+
+    {{people}}
+    <div>
+    <table>
+        <tr>
+            <th>S. No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>CAN vote </th>
+        </tr>
+        {% for people in peoples %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ people.name }}</td>
+            <td>{{ people.age }}</td>
+            <td>{% if people.age >= 26 %}
+                👍
+                {% else %}
+                👎
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>{{ text|truncatechars:100 }}</p>
+    </div>
+
+</body>
+</html>
